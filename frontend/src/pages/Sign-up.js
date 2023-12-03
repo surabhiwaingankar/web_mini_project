@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import './login.css'
+
 const Signup = () => { 
 
     const [email1 , setEmail1] = useState("");
@@ -72,70 +74,54 @@ const handleSubmit1 = async(e) =>{
 }
 
 return (
-    <div>
-            <h2>Login</h2>
-        <form className="create" onSubmit={handleSubmit1}>
-            <label>Email</label>
-            <input
-            type= "text"
-            onChange= {(e) => setEmail1(e.target.value)}
-            value = {email1}
-            />
+    <div className="center-box">
+    <div className="login-container">
+      <h2>Sign-up</h2>
+      <form className="login-form" onSubmit={handleSubmit2}>
+        <label>Email</label>
+        <input
+          type="text"
+          onChange={(e) => setEmail(e.target.value)}
+          value={email}
+          required
+        />
 
-            <label>Password</label>
-            <input
-            type= "password"
-            onChange= {(e) => setPassword1(e.target.value)}
-            value = {password1}
-            />
+        <label>Password</label>
+        <input
+          type="password"
+          onChange={(e) => setPassword(e.target.value)}
+          value={password}
+          required
+        />
 
-            <button>Login</button>
-            </form>
-        
+        <label>Password Confirm</label>
+        <input
+          type="password"
+          onChange={(e) => setPasswordConfirm(e.target.value)}
+          value={passwordConfirm}
+          required
+        />
 
+        <label>Name</label>
+        <input
+          type="text"
+          onChange={(e) => setName(e.target.value)}
+          value={name}
+          required
+        />
 
-            <h2>Sign-up</h2>
-            <form className="create" onSubmit={handleSubmit2}>
-            <label>Email</label>
-            <input
-            type= "text"
-            onChange= {(e) => setEmail(e.target.value)}
-            value = {email}
-            />
+        <label>Role</label>
+        <input
+          type="text"
+          onChange={(e) => setRole(e.target.value)}
+          value={role}
+          required
+        />
 
-            <label>Password</label>
-            <input
-            type= "password"
-            onChange= {(e) => setPassword(e.target.value)}
-            value = {password}
-            />
-
-            <label>Password Confirm</label>
-            <input
-            type= "password"
-            onChange= {(e) => setPasswordConfirm(e.target.value)}
-            value = {passwordConfirm}
-            />
-
-            <label>Name</label>
-            <input
-            type= "text"
-            onChange= {(e) => setName(e.target.value)}
-            value = {name}
-            />
-
-            <label>Role</label>
-            <input
-            type= "text"
-            onChange= {(e) => setRole(e.target.value)}
-            value = {role}
-            />
-
-            <button>Sign-up</button>
-
-        </form>
-        
-        </div>
+        <button className="login-button">Sign-up</button>
+      </form>
+    </div>
+  </div>
 )
 }
 export default Signup
