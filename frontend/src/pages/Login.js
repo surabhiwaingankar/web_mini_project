@@ -26,6 +26,7 @@ const handleSubmit1 = async(e) =>{
     if(!response.ok)
     {
         setError(json.error)
+        console.log(error)
     }
     if(response.ok)
     {

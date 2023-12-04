@@ -8,7 +8,6 @@ const AppError = require('./../utils/appError');
 
 exports.signup = catchAsync(async(req, res, next) =>{
     console.log(req.body)
-    console.log("before create check");
     const newUser = await User.create({
         name: req.body.name,
         email: req.body.email,
@@ -17,8 +16,6 @@ exports.signup = catchAsync(async(req, res, next) =>{
        passwordChangedAt: req.body.passwordChangedAt,
         role: req.body.role
     });
-
-    console.log("before env check");
 
     // const url = `${req.protocol}://${req.get('host')}/me`; //protocol- http or https, host-local host etc
     // console.log(url);
